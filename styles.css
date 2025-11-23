@@ -1,0 +1,136 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #f0f8ff, #e6f7ff);
+    color: #333;
+    margin: 0;
+    padding: 0;
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #007bff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.profile-container {
+    flex-direction: row;
+}
+
+.details {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.details p {
+    margin: 10px 0;
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+.image-container {
+    flex: 1;
+    text-align: center;
+}
+
+.banner-image {
+    width: 270px;
+    height: 480px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.banner-image:hover {
+    transform: scale(1.05);
+}
+
+.links-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.link-button {
+    display: inline-block;
+    margin: 10px;
+    padding: 15px 20px;
+    background: #ffffff;
+    color: #007bff;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: background 0.3s, transform 0.3s;
+}
+
+.link-button:hover {
+    background: #007bff;
+    color: #ffffff;
+    transform: translateY(-5px);
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+nav {
+    text-align: center;
+    padding: 20px;
+}
+
+nav a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #0056b3;
+}
+
+.admin-panel {
+    text-align: center;
+    padding: 20px;
+    background: #f9f9f9;
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+    .banner-image {
+        width: 200px;
+        height: 356px;
+    }
+}
