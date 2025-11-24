@@ -5,170 +5,138 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GB Genius Portfolio</title>
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Oswald:wght@700&display=swap" rel="stylesheet">
 
     <style>
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        /* Setup */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            overflow: hidden; /* Body ka scroll band */
+            background-color: #e3f2fd; /* Alag background color taaki fark dikhe */
         }
 
-        body {
-            /* Modern gradient background similar to clean portfolio styles */
-            background: linear-gradient(to bottom, #e0f7fa, #ffffff);
-            color: #333;
-            overflow-x: hidden;
-            /* Yeh feature smooth scrolling enable karega */
-            scroll-behavior: smooth; 
-        }
-
-        /* Container for Scroll Snapping (Page by Page feel) */
-        .scroll-container {
+        /* Main Scroll Container */
+        .container {
             height: 100vh;
+            width: 100vw;
             overflow-y: scroll;
-            scroll-snap-type: y mandatory; /* Isse page magnet ki tarah chipkega */
+            scroll-snap-type: y mandatory; /* Ye hai wo magic jo page chipkayega */
+            scroll-behavior: smooth;
         }
 
-        /* Har Section ek full screen page hoga */
+        /* Har Page ka Style */
         section {
             height: 100vh;
             width: 100%;
-            scroll-snap-align: start;
+            scroll-snap-align: start; /* Page start par rukega */
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 20px;
-            position: relative;
+            border-bottom: 5px solid #fff; /* Page ke beech line */
         }
 
-        /* --- TYPOGRAPHY RULES --- */
+        /* --- FONT STYLES --- */
         
-        /* GB GENIUS and MORE INFORMATION (Bold & Capital) */
-        .main-title, .btn-text {
+        /* GB GENIUS & MORE INFO Style */
+        .big-bold-text {
             font-family: 'Oswald', sans-serif;
-            text-transform: uppercase;
+            font-size: 4rem; /* Bahut Bada size */
             font-weight: 700;
-            letter-spacing: 2px;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 0px rgba(0,0,0,0.1);
         }
 
-        .main-title {
-            font-size: 3.5rem; /* Bahut bada size */
-            margin-bottom: 10px;
-            color: #2c3e50;
-        }
-
-        /* Cursive Text for Details */
-        .cursive-detail {
+        /* Details Style (Cursive) */
+        .cursive-line {
             font-family: 'Dancing Script', cursive;
-            font-size: 1.8rem; /* Normal se thoda bada taaki readable ho */
-            line-height: 1.6;
-            color: #444;
-            margin: 5px 0;
+            font-size: 1.8rem;
+            color: #333;
+            margin: 8px 0;
+            font-weight: 600;
         }
 
         /* --- IMAGE ANIMATION --- */
-        
-        .image-container {
-            margin: 30px 0;
-            overflow: hidden; /* Image bahar na nikle */
+        .photo-frame {
+            width: 250px;
+            height: 350px;
+            border: 8px solid white;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            width: 300px;  /* Apne hisab se size adjust karein */
-            height: 400px;
+            overflow: hidden;
+            margin-bottom: 20px;
         }
 
-        .profile-img {
+        .photo-frame img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            /* Zoom In/Out Animation yahan hai */
-            animation: zoomBreathing 6s infinite alternate ease-in-out;
+            /* Animation: Zoom In Zoom Out */
+            animation: zoomEffect 4s infinite alternate ease-in-out;
         }
 
-        /* Keyframes for Zoom Effect */
-        @keyframes zoomBreathing {
+        @keyframes zoomEffect {
             0% { transform: scale(1); }
-            100% { transform: scale(1.15); } /* 15% Zoom karega */
+            100% { transform: scale(1.2); } /* 20% Zoom karega */
         }
 
-        /* --- BUTTON STYLE --- */
-        .btn-link {
-            text-decoration: none;
+        /* Scroll Indicator */
+        .scroll-hint {
             margin-top: 30px;
-            display: inline-block;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1rem;
+            opacity: 0.5;
+            animation: bounce 1.5s infinite;
         }
-
-        .more-info-btn {
-            background-color: #333;
-            color: white;
-            padding: 15px 40px;
-            font-size: 1.5rem;
-            border-radius: 50px;
-            transition: transform 0.3s, background 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .more-info-btn:hover {
-            background-color: #000;
-            transform: translateY(-5px);
-        }
-
-        /* Layout Adjustment specifically for your content */
-        .info-box {
-            text-align: left; /* Text left align ya center rakh sakte hain */
-            max-width: 600px;
-            background: rgba(255, 255, 255, 0.6);
-            padding: 20px;
-            border-radius: 10px;
-            backdrop-filter: blur(5px); /* Modern glass effect */
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(10px); }
         }
 
     </style>
 </head>
 <body>
 
-    <div class="scroll-container">
+    <div class="container">
         
-        <section id="page1">
-            <h1 class="main-title">GB GENIUS</h1>
+        <section style="background: linear-gradient(180deg, #dbeafe 0%, #eff6ff 100%);">
             
-            <div class="image-container">
-                <img src="1000667778.jpg" alt="Profile Photo" class="profile-img">
+            <h1 class="big-bold-text">GB GENIUS</h1>
+
+            <div class="photo-frame">
+                <img src="1000667778.jpg" alt="Profile">
             </div>
 
-            <div class="info-box">
-                <p class="cursive-detail">Date of Birth: 26 January</p>
-                <p class="cursive-detail">Address: Warisaliganj, Nawada (805130)</p>
-                <p class="cursive-detail">Diploma: Civil Engineering</p>
-                <p class="cursive-detail">(Government Polytechnic Gopalganj)</p>
-                <p class="cursive-detail">B. Tech: Computer Science & Engineering</p>
-                <p class="cursive-detail">(Government College of Engineering Kishanganj)</p>
+            <div class="details-box">
+                <p class="cursive-line">Birthday: 26 January</p>
+                <p class="cursive-line">Address: Warisaliganj, Nawada (805130)</p>
+                <p class="cursive-line">Diploma: Civil Engineering</p>
+                <p class="cursive-line">(Government Polytechnic Gopalganj)</p>
+                <p class="cursive-line">B. Tech: Computer Science & Engineering</p>
+                <p class="cursive-line">(Government College of Engineering Kishanganj)</p>
             </div>
 
-            <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.6;">Scroll Down</p>
+            <div class="scroll-hint">↓ SCROLL DOWN ↓</div>
         </section>
 
-        <section id="page2" style="background-color: #f0f4f8;">
+        <section style="background: linear-gradient(180deg, #e0f2f1 0%, #f1f8e9 100%);">
             
-            <h1 class="main-title">MORE INFORMATION</h1>
-            
-            <div class="info-box" style="text-align: center;">
-                <p class="cursive-detail">Here is the second page content.</p>
-                <p class="cursive-detail">You can add more details regarding your projects,</p>
-                <p class="cursive-detail">skills, and contact information here.</p>
+            <h1 class="big-bold-text">MORE INFORMATION</h1>
+
+            <div class="details-box">
+                <p class="cursive-line">Welcome to my personal space.</p>
+                <p class="cursive-line">Here you can add your skills,</p>
+                <p class="cursive-line">projects, and contact details.</p>
+                <p class="cursive-line">Email: gbgenius@example.com</p>
             </div>
 
-            <a href="#page1" class="btn-link">
-                <button class="more-info-btn btn-text">GO BACK UP</button>
-            </a>
-
+            <div class="scroll-hint">↑ SCROLL UP ↑</div>
         </section>
 
     </div>
