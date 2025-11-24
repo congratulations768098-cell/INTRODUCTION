@@ -1,27 +1,103 @@
-        <section id="page2" style="background-color: #1e293b; color: white;">
-            <h1 class="bold-title" style="margin-bottom: 30px;">MORE INFORMATION</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GB GENIUS - Links</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Oswald:wght@700&display=swap" rel="stylesheet">
 
-            <div style="max-width: 700px; text-align: left; padding: 0 20px;">
-                
-                <h2 class="bold-title" style="font-size: 2rem; margin-bottom: 10px; text-align: center;">TECHNICAL SKILLS</h2>
-                
-                <p class="cursive-detail">Programming Languages: C, C++, Python, JavaScript</p>
-                <p class="cursive-detail">Web Development: HTML5, CSS3, Tailwind CSS</p>
-                <p class="cursive-detail">Frameworks/Tools: AutoCAD, GitHub, VS Code, Basic React</p>
-                <p class="cursive-detail" style="margin-bottom: 40px;">Database: MySQL</p> 
-                </div>
+    <style>
+        body {
+            background-color: #0f172a; /* Dark Background */
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
 
-            <div style="max-width: 700px; text-align: left; padding: 0 20px;">
-                
-                <h2 class="bold-title" style="font-size: 2rem; margin-bottom: 10px; text-align: center;">CONNECT WITH ME</h2>
-                
-                <p class="cursive-detail">Email: gbgenius@example.com (Replace with your email)</p>
-                <p class="cursive-detail">Instagram: @genius_2913 (As per your image)</p>
-                <p class="cursive-detail">Snapchat ID: **genius_2913**</p>
-            </div>
-            
-            <a href="#page1" style="text-decoration: none; margin-top: 30px;">
-                <p class="bold-title" style="font-size: 1.5rem; border: 1px solid white; padding: 10px 20px; border-radius: 30px;">GO BACK UP</p>
-            </a>
-        </section>
+        /* Bada aur Bold Font (Header) */
+        .bold-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            color: #a5f3fc;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 90%;
+            max-width: 450px;
+        }
+
+        /* Button Style (Cursive font) */
+        .link-button {
+            background-color: #1e293b;
+            color: white;
+            text-decoration: none;
+            padding: 15px 25px;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            font-family: 'Dancing Script', cursive; 
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s, transform 0.3s;
+            border: 1px solid #334155;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .link-button:hover {
+            background-color: #334155;
+            transform: translateY(-3px);
+            border-color: #a5f3fc;
+        }
+
+        .icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 15px;
+            border-radius: 4px;
+        }
+
+        .back-link {
+            font-family: 'Oswald', sans-serif;
+            text-decoration: none;
+            color: #a5f3fc;
+            margin-top: 40px;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="bold-title">CONNECT WITH GB GENIUS</h1>
+    </header>
+    <main class="links-container">
+        
+        <a href="https://www.instagram.com/genius_2913" target="_blank" class="link-button">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="icon"> Instagram: @genius_2913
+        </a>
+
+        <a href="https://wa.me/917463931320" target="_blank" class="link-button">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="icon"> WhatsApp: 7463931320
+        </a>
+        
+        <a href="https://www.snapchat.com/add/genius_2913" target="_blank" class="link-button">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Snapchat_icon.svg" alt="Snapchat" class="icon"> Snapchat: @genius_2913
+        </a>
+
+    </main>
+    <a href="index.html" class="back-link">← Back to Profile</a>
+</body>
+        </html>
         
