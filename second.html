@@ -3,101 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GB GENIUS - Links</title>
+    <title>Contact Registry - GB Genius</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Oswald:wght@700&display=swap" rel="stylesheet">
-
+    <!-- Google Fonts for a classic look -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN (Using minimal utility classes) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
     <style>
+        /* Body background: Slightly off-white, like a dim room */
         body {
-            background-color: #0f172a; /* Dark Background */
-            color: white;
-            font-family: Arial, sans-serif;
+            background-color: #f7f3e8;
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 40px 20px;
-            min-height: 100vh;
-        }
-
-        /* Bada aur Bold Font (Header) */
-        .bold-title {
-            font-family: 'Oswald', sans-serif;
-            font-size: 3rem;
-            text-transform: uppercase;
-            margin-bottom: 40px;
-            color: #a5f3fc;
-            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
-        }
-
-        .links-container {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            width: 90%;
-            max-width: 450px;
-        }
-
-        /* Button Style (Cursive font) */
-        .link-button {
-            background-color: #1e293b;
-            color: white;
-            text-decoration: none;
-            padding: 15px 25px;
-            border-radius: 12px;
-            font-size: 1.2rem;
-            font-family: 'Dancing Script', cursive; 
-            font-weight: 600;
-            display: flex;
-            align-items: center;
             justify-content: center;
-            transition: background-color 0.3s, transform 0.3s;
-            border: 1px solid #334155;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
         }
 
-        .link-button:hover {
-            background-color: #334155;
-            transform: translateY(-3px);
-            border-color: #a5f3fc;
+        /* The main "Page" container */
+        .old-page {
+            width: 95%;
+            max-width: 600px;
+            background-color: #fffaf0; /* Creamy paper color */
+            border: 1px solid #d4c7b2; /* Subtle paper edge */
+            padding: 50px 40px;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2); /* Soft shadow to lift the page */
+            color: #3e3a34; /* Dark brown/ink color */
+            line-height: 1.6;
+            font-family: 'Cormorant Garamond', serif; /* Classic Body Font */
+            position: relative;
         }
 
-        .icon {
-            width: 24px;
-            height: 24px;
-            margin-right: 15px;
-            border-radius: 4px;
+        /* Decorative Border */
+        .old-page::before {
+            content: "";
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            right: 15px;
+            bottom: 15px;
+            border: 2px dashed #d4c7b2; /* Dashed inner border for effect */
+            pointer-events: none;
         }
 
-        .back-link {
-            font-family: 'Oswald', sans-serif;
+        /* Title Style: Elegant script font */
+        .page-title {
+            font-family: 'Tangerine', cursive; /* Elegant Script Font */
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #5d4a36; /* Darker ink color for title */
+            text-align: center;
+            margin-bottom: 30px;
+            line-height: 1;
+        }
+        
+        /* Link Entry Styles */
+        .link-entry {
+            display: flex;
+            align-items: center;
+            padding: 15px 0;
+            font-size: 1.25rem;
             text-decoration: none;
-            color: #a5f3fc;
-            margin-top: 40px;
+            color: #3e3a34; /* Ink color */
+            transition: background-color 0.2s;
+            border-bottom: 1px solid #d4c7b2;
+        }
+
+        .link-entry:last-child {
+             border-bottom: none; /* Remove border from the last item */
+        }
+
+        .link-entry:hover {
+            background-color: #f0f0e0; /* Subtle highlight on hover */
+            border-color: #5d4a36;
+        }
+        
+        .entry-icon {
+            font-size: 1.4rem;
+            width: 30px; 
+            flex-shrink: 0;
+            color: #a55a00; /* Subtle gold/aged color for icons */
+        }
+        
+        /* --- CHANGED SECTION FOR MORE SPACE --- */
+        .entry-label {
+            font-weight: 700;
+            width: 120px; /* Increased fixed width for better spacing/alignment */
+            flex-shrink: 0;
+            color: #5d4a36; 
+            margin-right: 20px; /* Increased margin for more distance */
+            text-transform: uppercase;
             font-size: 1rem;
-            transition: color 0.3s;
+            letter-spacing: 1px;
+        }
+        /* --- END CHANGED SECTION --- */
+
+        .entry-value {
+            font-weight: 400;
+            font-style: italic;
+            font-size: 1.3rem;
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 600px) {
+            .old-page {
+                padding: 30px 20px;
+            }
+            .page-title {
+                font-size: 2.8rem;
+            }
+            .entry-label {
+                width: 90px; /* Adjusted for smaller screens */
+                margin-right: 15px;
+            }
+            .entry-value {
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1 class="bold-title">CONNECT WITH GB GENIUS</h1>
-    </header>
-    <main class="links-container">
-        
-        <a href="https://www.instagram.com/genius_2913" target="_blank" class="link-button">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="icon"> Instagram: @genius_2913
-        </a>
 
-        <a href="https://wa.me/917463931320" target="_blank" class="link-button">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="icon"> WhatsApp: 7463931320
-        </a>
+    <div class="old-page">
+        <!-- Main Title -->
+        <h1 class="page-title">
+            CONTACT REGISTRY
+        </h1>
         
-        <a href="https://www.snapchat.com/add/genius_2913" target="_blank" class="link-button">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Snapchat_icon.svg" alt="Snapchat" class="icon"> Snapchat: @genius_2913
-        </a>
+        <!-- Instruction / Date -->
+        <p class="text-center text-base italic mb-8 border-b pb-4 border-gray-300">
+            For Confidential Correspondence.
+        </p>
 
-    </main>
-    <a href="index.html" class="back-link">← Back to Profile</a>
+        <!-- Social Media Links Container -->
+        <div class="links-container">
+        
+            <!-- 1. Instagram Link -->
+            <a href="https://www.instagram.com/genius_boy_8277" target="_blank" class="link-entry">
+                <i class="fab fa-instagram entry-icon"></i>
+                <span class="entry-label">Instagram:</span>
+                <span class="entry-value">@genius_boy_8277</span>
+            </a>
+
+            <!-- 2. WhatsApp Business Link -->
+            <a href="https://wa.me/917463931320" target="_blank" class="link-entry">
+                <i class="fab fa-whatsapp entry-icon"></i>
+                <span class="entry-label">WhatsApp:</span>
+                <span class="entry-value">7463931320 (Business)</span>
+            </a>
+            
+            <!-- 3. Snapchat Link -->
+            <a href="https://www.snapchat.com/add/genius_2913" target="_blank" class="link-entry">
+                <i class="fab fa-snapchat-ghost entry-icon"></i>
+                <span class="entry-label">Snapchat:</span>
+                <span class="entry-value">genius_2913</span>
+            </a>
+
+        </div>
+
+        <!-- Footer Signature -->
+        <p class="mt-8 text-center text-sm italic">
+            — Registered by GB Genius —
+        </p>
+
+    </div>
+
 </body>
-        </html>
-        
+</html>
+
