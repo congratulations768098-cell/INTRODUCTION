@@ -3,34 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GB GENIUS - Profile</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>GB Genius Portfolio</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Oswald:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* Modern gradient background similar to clean portfolio styles */
+            background: linear-gradient(to bottom, #e0f7fa, #ffffff);
+            color: #333;
+            overflow-x: hidden;
+            /* Yeh feature smooth scrolling enable karega */
+            scroll-behavior: smooth; 
+        }
+
+        /* Container for Scroll Snapping (Page by Page feel) */
+        .scroll-container {
+            height: 100vh;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory; /* Isse page magnet ki tarah chipkega */
+        }
+
+        /* Har Section ek full screen page hoga */
+        section {
+            height: 100vh;
+            width: 100%;
+            scroll-snap-align: start;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        /* --- TYPOGRAPHY RULES --- */
+        
+        /* GB GENIUS and MORE INFORMATION (Bold & Capital) */
+        .main-title, .btn-text {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .main-title {
+            font-size: 3.5rem; /* Bahut bada size */
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        /* Cursive Text for Details */
+        .cursive-detail {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem; /* Normal se thoda bada taaki readable ho */
+            line-height: 1.6;
+            color: #444;
+            margin: 5px 0;
+        }
+
+        /* --- IMAGE ANIMATION --- */
+        
+        .image-container {
+            margin: 30px 0;
+            overflow: hidden; /* Image bahar na nikle */
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            width: 300px;  /* Apne hisab se size adjust karein */
+            height: 400px;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Zoom In/Out Animation yahan hai */
+            animation: zoomBreathing 6s infinite alternate ease-in-out;
+        }
+
+        /* Keyframes for Zoom Effect */
+        @keyframes zoomBreathing {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.15); } /* 15% Zoom karega */
+        }
+
+        /* --- BUTTON STYLE --- */
+        .btn-link {
+            text-decoration: none;
+            margin-top: 30px;
+            display: inline-block;
+        }
+
+        .more-info-btn {
+            background-color: #333;
+            color: white;
+            padding: 15px 40px;
+            font-size: 1.5rem;
+            border-radius: 50px;
+            transition: transform 0.3s, background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .more-info-btn:hover {
+            background-color: #000;
+            transform: translateY(-5px);
+        }
+
+        /* Layout Adjustment specifically for your content */
+        .info-box {
+            text-align: left; /* Text left align ya center rakh sakte hain */
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px); /* Modern glass effect */
+        }
+
+    </style>
 </head>
 <body>
-    <header>
-        <h1>GB GENIUS</h1>
-    </header>
-    <main class="profile-container">
-        <div class="details">
-            <p><strong>Birthday:</strong> 13 January</p>
-            <p><strong>Address:</strong> Warisaliganj, Nawada (805130)</p>
-            <p><strong>Diploma:</strong> Civil Engineering (Government Polytechnic Gopalganj)</p>
-            <p><strong>B Tech:</strong> Computer Science & Engineering (Government College Engineering Kishanganj)</p>
-        </div>
-        <div class="image-container">
-            <img id="ProfileImage" src="Profile.jpg" alt="GB GENIUS Profile" class="banner-image">
-        </div>
-    </main>
-    <nav>
-        <a href="second.html">Go to Second Page</a>
-    </nav>
-    <div class="admin-panel">
-        <button id="toggleAdmin">Admin Panel (Upload Image)</button>
-        <div id="adminContent" class="hidden">
-            <input type="file" id="imageUpload" accept="image/*">
-            <p>Upload a new banner image (9:16 ratio recommended).</p>
-        </div>
+
+    <div class="scroll-container">
+        
+        <section id="page1">
+            <h1 class="main-title">GB GENIUS</h1>
+            
+            <div class="image-container">
+                <img src="1000667778.jpg" alt="Profile Photo" class="profile-img">
+            </div>
+
+            <div class="info-box">
+                <p class="cursive-detail">Date of Birth: 26 January</p>
+                <p class="cursive-detail">Address: Warisaliganj, Nawada (805130)</p>
+                <p class="cursive-detail">Diploma: Civil Engineering</p>
+                <p class="cursive-detail">(Government Polytechnic Gopalganj)</p>
+                <p class="cursive-detail">B. Tech: Computer Science & Engineering</p>
+                <p class="cursive-detail">(Government College of Engineering Kishanganj)</p>
+            </div>
+
+            <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.6;">Scroll Down</p>
+        </section>
+
+        <section id="page2" style="background-color: #f0f4f8;">
+            
+            <h1 class="main-title">MORE INFORMATION</h1>
+            
+            <div class="info-box" style="text-align: center;">
+                <p class="cursive-detail">Here is the second page content.</p>
+                <p class="cursive-detail">You can add more details regarding your projects,</p>
+                <p class="cursive-detail">skills, and contact information here.</p>
+            </div>
+
+            <a href="#page1" class="btn-link">
+                <button class="more-info-btn btn-text">GO BACK UP</button>
+            </a>
+
+        </section>
+
     </div>
-    <script src="script.js"></script>
+
 </body>
 </html>
